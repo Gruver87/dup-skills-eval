@@ -4,7 +4,7 @@ build-backend = "setuptools.build_meta"
 
 [project]
 name = "dup-skills-eval"
-version = "0.1.0"
+version = "0.1.1"
 description = "Fail-closed industrial evaluation gate for Agent Skills packs (DUP Labs)"
 readme = "README.md"
 license = { text = "MIT" }

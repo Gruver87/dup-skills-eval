@@ -2,7 +2,7 @@
 
 from __future__ import annotations
 
-__version__ = "0.1.0"
+__version__ = "0.1.1"
 
 from skills_eval.models import EvalReport, Finding, Severity
 from skills_eval.runner import evaluate_pack

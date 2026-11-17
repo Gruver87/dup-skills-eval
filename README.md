@@ -3,7 +3,7 @@
 [![ci](https://github.com/Gruver87/dup-skills-eval/actions/workflows/ci.yml/badge.svg)](https://github.com/Gruver87/dup-skills-eval/actions/workflows/ci.yml)
 
 **Org:** [DUP Labs](https://github.com/Gruver87) · **Author:** Uladzimir Dabranski  
-**Version:** `0.1.0` · **Fail-closed** industrial gate for [Agent Skills](https://agentskills.io/specification) packs
+**Version:** `0.1.1` · **Fail-closed** industrial gate for [Agent Skills](https://agentskills.io/specification) packs
 
 Evaluates a skills pack with three deterministic gates:
 
@@ -13,12 +13,25 @@ Evaluates a skills pack with three deterministic gates:
 
 PASS = zero **errors**. Warnings do not fail. This is **not** a live-agent scorecard and **not** a 48h soak.
 
+## Ecosystem E2E (2026-11-17)
+
+Fail-closed chain: **security-scan → skills-eval → evidence-graph → policy-gate**.  
+Result: **E2E PASS** (soak not run; no KuCoin keys). Futures correctly **REFUSED**.
+
+![DUP Ecosystem E2E dashboard](docs/assets/e2e-ecosystem-2026-11-17.png)
+
+- PNG: [`docs/assets/e2e-ecosystem-2026-11-17.png`](docs/assets/e2e-ecosystem-2026-11-17.png)
+- PDF: [`docs/assets/e2e-ecosystem-2026-11-17.pdf`](docs/assets/e2e-ecosystem-2026-11-17.pdf)
+- Regenerate: `python scripts/render_e2e_dashboard.py`
+
 | Repo | Role |
 |------|------|
 | [`dup-agent-skills`](https://github.com/Gruver87/dup-agent-skills) | Primary pack under test |
 | [`dup-skill-security-scan`](https://github.com/Gruver87/dup-skill-security-scan) | Install allowlist + threat heuristics |
 | [`dup-market-radar`](https://github.com/Gruver87/dup-market-radar) | Ops API companions |
 | [`dup-policy-gate`](https://github.com/Gruver87/dup-policy-gate) | Spot-only policy before orders |
+| [`dup-evidence-graph`](https://github.com/Gruver87/dup-evidence-graph) | Desktop evidence / claim map |
+| [`dup-radar-news-mcp`](https://github.com/Gruver87/dup-radar-news-mcp) | Read-only digest MCP |
 | [`dup-protocol`](https://github.com/Gruver87/dup-protocol) | L1 industrial pin |
 
 ## Install
