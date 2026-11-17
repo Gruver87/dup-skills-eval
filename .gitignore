@@ -16,6 +16,6 @@ build/
 .idea/
 .vscode/
 *.log
-reports/*.json
-reports/*.md
+reports/**
 !reports/.gitkeep
+
