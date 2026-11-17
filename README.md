@@ -1,6 +1,7 @@
 # DUP Skills Eval
 
 [![ci](https://github.com/Gruver87/dup-skills-eval/actions/workflows/ci.yml/badge.svg)](https://github.com/Gruver87/dup-skills-eval/actions/workflows/ci.yml)
+[![release](https://img.shields.io/github/v/release/Gruver87/dup-skills-eval?display_name=tag)](https://github.com/Gruver87/dup-skills-eval/releases)
 
 **Org:** [DUP Labs](https://github.com/Gruver87) · **Author:** Uladzimir Dabranski  
 **Version:** `0.1.1` · **Fail-closed** industrial gate for [Agent Skills](https://agentskills.io/specification) packs
