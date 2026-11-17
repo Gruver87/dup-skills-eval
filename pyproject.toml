@@ -1,0 +1,43 @@
+[build-system]
+requires = ["setuptools>=68", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "dup-skills-eval"
+version = "0.1.0"
+description = "Fail-closed industrial evaluation gate for Agent Skills packs (DUP Labs)"
+readme = "README.md"
+license = { text = "MIT" }
+requires-python = ">=3.11"
+authors = [{ name = "Uladzimir Dabranski", email = "dup@duplabs.dev" }]
+keywords = ["agent-skills", "evaluation", "mcp", "dup-labs", "fail-closed"]
+classifiers = [
+  "Development Status :: 4 - Beta",
+  "License :: OSI Approved :: MIT License",
+  "Programming Language :: Python :: 3",
+  "Typing :: Typed",
+]
+dependencies = []
+
+[project.optional-dependencies]
+dev = ["pytest>=8.0", "ruff>=0.8"]
+
+[project.scripts]
+dup-skills-eval = "skills_eval.cli:main"
+
+[project.urls]
+Homepage = "https://github.com/Gruver87/dup-skills-eval"
+Repository = "https://github.com/Gruver87/dup-skills-eval"
+Related = "https://github.com/Gruver87/dup-agent-skills"
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+pythonpath = ["src"]
+
+[tool.ruff]
+target-version = "py311"
+line-length = 100
+src = ["src", "tests", "scripts"]

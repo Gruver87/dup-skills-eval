@@ -1,0 +1,23 @@
+{
+  "tool_version": "0.1.0",
+  "pack_root": "C:\\Users\\vovun\\Desktop\\dup-agent-skills",
+  "skills_root": "C:\\Users\\vovun\\Desktop\\dup-agent-skills\\skills",
+  "skill_count": 10,
+  "pin": "0.1.10",
+  "versions": {
+    "bot-holdout-wait": "0.1.10",
+    "evidence-honesty": "0.1.10",
+    "l1-boundary": "0.1.10",
+    "market-digest": "0.1.10",
+    "no-futures-auto": "0.1.10",
+    "radar-live-money-gate": "0.1.10",
+    "radar-ops-status": "0.1.10",
+    "radar-pwa-install": "0.1.10",
+    "radar-test-gate": "0.1.10",
+    "secrets-hygiene": "0.1.10"
+  },
+  "ok": true,
+  "error_count": 0,
+  "warn_count": 0,
+  "findings": []
+}
