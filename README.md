@@ -6,6 +6,9 @@
 **Org:** [DUP Labs](https://github.com/Gruver87) · **Author:** Uladzimir Dabranski  
 **Version:** `0.1.1` · **Fail-closed** industrial gate for [Agent Skills](https://agentskills.io/specification) packs
 
+Universal Agent Skills / MCP verification pattern — apply in any high-stakes domain
+(fintech, DevOps, regulated ops). Crypto Market Radar is the first combat stand, not the only one.
+
 Evaluates a skills pack with three deterministic gates:
 
 1. **Static** — naming, frontmatter, version pin, `.agents` mirror  
@@ -36,25 +39,34 @@ Result: **E2E PASS** (soak not run; no KuCoin keys). Futures correctly **REFUSED
 | [`dup-radar-news-mcp`](https://github.com/Gruver87/dup-radar-news-mcp) | Read-only digest MCP |
 | [`dup-protocol`](https://github.com/Gruver87/dup-protocol) | L1 industrial pin |
 
+## Quick demo (no Desktop / no keys)
+
+```bash
+git clone https://github.com/Gruver87/dup-skills-eval.git && cd dup-skills-eval
+python -m pip install -e ".[dev]"
+make demo
+# or: python -m skills_eval --demo
+# Windows: .\scripts\demo.ps1
+```
+
 ## Install
 
-```powershell
-cd C:\Users\vovun\Desktop\dup-skills-eval
+```bash
 python -m pip install -e ".[dev]"
-.\scripts\test_all.ps1
+make test   # or: .\scripts\test_all.ps1
 ```
 
 ## Eval sibling pack
 
-```powershell
-.\scripts\eval_dup_agent_skills.ps1
-# or:
-python -m skills_eval ..\dup-agent-skills --report-dir .\reports\dup-agent-skills
+```bash
+python -m skills_eval ../dup-agent-skills --report-dir ./reports/dup-agent-skills
+# Windows: .\scripts\eval_dup_agent_skills.ps1
 ```
 
 ## CLI
 
 ```text
+dup-skills-eval --demo
 dup-skills-eval <pack_root> [--report-dir DIR] [--skip-security] [--skip-honesty]
 ```
 

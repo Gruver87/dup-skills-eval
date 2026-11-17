@@ -11,18 +11,30 @@ from skills_eval.report import print_summary, write_json, write_markdown
 from skills_eval.runner import evaluate_pack
 
 
+def _demo_pack() -> Path:
+    return Path(__file__).resolve().parents[2] / "tests" / "fixtures" / "good_pack"
+
+
 def build_parser() -> argparse.ArgumentParser:
     p = argparse.ArgumentParser(
         prog="dup-skills-eval",
         description=(
             "Fail-closed industrial evaluation gate for Agent Skills packs "
-            "(static + security + honesty)."
+            "(static + security + honesty). Patterns apply beyond crypto — "
+            "any high-stakes Agent Skills / MCP install."
         ),
     )
     p.add_argument(
         "pack_root",
         type=Path,
-        help="Path to skills pack root (contains skills/)",
+        nargs="?",
+        default=None,
+        help="Path to skills pack root (contains skills/). Omit with --demo.",
+    )
+    p.add_argument(
+        "--demo",
+        action="store_true",
+        help="Evaluate packaged good_pack fixture (no external deps)",
     )
     p.add_argument(
         "--skills-subdir",
@@ -44,7 +56,16 @@ def build_parser() -> argparse.ArgumentParser:
 
 def main(argv: list[str] | None = None) -> int:
     args = build_parser().parse_args(argv)
-    pack_root: Path = args.pack_root
+    if args.demo:
+        pack_root = _demo_pack()
+        if args.report_dir is None:
+            args.report_dir = Path("reports/demo")
+        print(f"skills_eval DEMO pack={pack_root}")
+    else:
+        pack_root = args.pack_root
+        if pack_root is None:
+            print("FAIL: pack_root required (or pass --demo)", file=sys.stderr)
+            return 2
     if not pack_root.exists():
         print(f"FAIL: pack root does not exist: {pack_root}", file=sys.stderr)
         return 2
