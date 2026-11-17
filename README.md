@@ -16,7 +16,9 @@ PASS = zero **errors**. Warnings do not fail. This is **not** a live-agent score
 | Repo | Role |
 |------|------|
 | [`dup-agent-skills`](https://github.com/Gruver87/dup-agent-skills) | Primary pack under test |
+| [`dup-skill-security-scan`](https://github.com/Gruver87/dup-skill-security-scan) | Install allowlist + threat heuristics |
 | [`dup-market-radar`](https://github.com/Gruver87/dup-market-radar) | Ops API companions |
+| [`dup-policy-gate`](https://github.com/Gruver87/dup-policy-gate) | Spot-only policy before orders |
 | [`dup-protocol`](https://github.com/Gruver87/dup-protocol) | L1 industrial pin |
 
 ## Install
