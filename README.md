@@ -28,6 +28,7 @@ Result: **E2E PASS** (soak not run; no KuCoin keys). Futures correctly **REFUSED
 |------|------|
 | [`dup-agent-skills`](https://github.com/Gruver87/dup-agent-skills) | Primary pack under test |
 | [`dup-skill-security-scan`](https://github.com/Gruver87/dup-skill-security-scan) | Install allowlist + threat heuristics |
+| [`dup-skill-trust-plane`](https://github.com/Gruver87/dup-skill-trust-plane) | Trust control plane + Skill Cards |
 | [`dup-market-radar`](https://github.com/Gruver87/dup-market-radar) | Ops API companions |
 | [`dup-policy-gate`](https://github.com/Gruver87/dup-policy-gate) | Spot-only policy before orders |
 | [`dup-evidence-graph`](https://github.com/Gruver87/dup-evidence-graph) | Desktop evidence / claim map |
